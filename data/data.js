@@ -25,7 +25,7 @@ const data = {
       latitudeDelta: "1234",
       longitude: "1234",
       longitudeDelta: "1234",
-      address: "mumbai india",
+      address: "ibadan NIgeria",
     },
     title: "burger king",
     imageUrl:
