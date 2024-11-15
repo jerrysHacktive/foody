@@ -20,13 +20,12 @@ app.use(express.json())
 app.use(morgan('dev'))
 
 //routes
-app.use('/api/v1/test', require('./routes/testRoutes'))
 app.use('/api/v1/auth', require('./routes/authRoutes'))
-app.use('/api/v1/user', require('./routes/userRoute'))
-app.use('/api/v1/restaurant', require('./routes/restaurantRoute'))
+app.use('/api/v1/users', require('./routes/userRoute'))
+app.use('/api/v1/restaurants', require('./routes/restaurantRoute'))
 app.use('/api/v1/category', require('./routes/categoryRoutes'))
-app.use('/api/v1/food', require('./routes/foodRoutes'))
-
+app.use('/api/v1/foods', require('./routes/foodRoutes'))
+app.use('/api/v1/orders', require('./routes/orderRoutes'))
 
 app.get('/', (req, res)=>{
 res.status(200).send('<h1>welcome to foody-App server</h1>')

@@ -76,12 +76,18 @@ const updateCategory = async (req, res) => {
 
     try {
         const {id} = req.params
+        if(!updatedCategory){
+            return res.status(500).send({
+                success : false,
+                message : 'category id not found'
+            })
+        }
         const {title, imageUrl} = req.body
         const updatedCategory = await categoryModel.findByIdAndUpdate(id,{title, imageUrl}, {new:true})
         if(!updatedCategory){
             return res.status(500).send({
                 success : false,
-                message : 'category not found'
+                message : 'cannot update category'
             })
         }
 return res.status(200).send({
@@ -107,11 +113,17 @@ const deleteCategory = async () => {
 try {
     
 const {id} = req.params
+if(!id){
+    return res.status(500).send({
+        success : false,
+        message : 'category id not found'
+    })
+}
 const category = await categoryModel.findById(id)
 if(!category){
     return res.status(500).send({
         success : false,
-        message : 'category not found'
+        message : 'cannot delete category'
     })
 }
 
