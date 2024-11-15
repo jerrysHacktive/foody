@@ -10,7 +10,7 @@ const createCategory = async (req, res) => {
         if(!title|| !imageUrl){
            return res.status(500).send({
         status : false,
-        message: 'all fileds must be filled',
+        message: 'all fields must be filled',
 
             })
         }
@@ -123,7 +123,7 @@ const category = await categoryModel.findById(id)
 if(!category){
     return res.status(500).send({
         success : false,
-        message : 'cannot delete category'
+        message : 'cannot delete category                                               '
     })
 }
 
@@ -147,7 +147,7 @@ return res.status(200).send({
 
 
 module.exports = {
-    createCategory,
+createCategory,
 getAllCategories,
 updateCategory,
 deleteCategory
